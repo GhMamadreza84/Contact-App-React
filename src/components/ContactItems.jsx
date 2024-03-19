@@ -1,5 +1,5 @@
 
-const ContactItems = ({data:{id,name,lastName,email,phone}}) => {
+const ContactItems = ({data:{name,lastName,email,phone}}) => {
     return (
         <li key={id}>
         <p>
