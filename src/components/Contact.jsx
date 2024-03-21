@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {v4} from "uuid";
+import { v4 } from "uuid";
 import ContactsList from "./ContactsList";
 import inputs from "../constant/inputs";
 
@@ -12,6 +12,10 @@ const Contact = () => {
     email: "",
     phone: "",
   });
+  const deleteHandler = (id) => {
+    const newContacts = contacts.filter((contact) => contact.id !== id);
+    setContacts(newContacts)
+  };
   const changeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -55,7 +59,7 @@ const Contact = () => {
         <button onClick={addHandler}>Add Contact</button>
       </div>
       <div>{alert && <p>{alert}</p>}</div>
-      <ContactsList contact={contacts} />
+      <ContactsList contact={contacts} deleteHandler={deleteHandler}/>
     </div>
   );
 };
