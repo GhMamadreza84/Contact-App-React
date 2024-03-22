@@ -1,4 +1,4 @@
-import ContactItems from "./ContactItems";
+import ContactItems from "./ContactItems.jsx";
 import styles from "./ContactList.module.css"
 
 const ContactsList = ({ contact, deleteHandler }) => {
